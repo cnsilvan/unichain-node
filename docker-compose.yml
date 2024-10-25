@@ -23,6 +23,7 @@ services:
       test: wget --no-verbose --tries=1 --spider http://localhost:8545 || exit 1
     restart: always
     entrypoint: /entrypoint.sh
+    container_name: execution-client
 
   op-node:
     image: us-docker.pkg.dev/oplabs-tools-artifacts/images/op-node:v1.9.1
@@ -45,3 +46,4 @@ services:
       execution-client:
         condition: service_healthy
     restart: always
+    container_name: op-node
