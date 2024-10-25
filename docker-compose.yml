@@ -8,9 +8,9 @@ services:
       - .env
       - .env.sepolia
     ports:
-      - 30303:30303/udp
-      - 30303:30303/tcp
-      - 8545:8545/tcp
+      - 30305:30303/udp
+      - 30305:30303/tcp
+      - 8549:8545/tcp
       - 8546:8546/tcp
     volumes:
       - ${HOST_DATA_DIR}:/data
