@@ -3,10 +3,12 @@ volumes:
 
 services:
   execution-client:
-    image: us-docker.pkg.dev/oplabs-tools-artifacts/images/op-geth:v1.101411.3
+    image: us-docker.pkg.dev/oplabs-tools-artifacts/images/op-geth:v1.101500.0
     env_file:
       - .env
-      - .env.sepolia
+      # select your network here:
+#     - .env.sepolia
+      - .env.mainnet
     ports:
       - 30305:30303/udp
       - 30305:30303/tcp
@@ -26,10 +28,12 @@ services:
     container_name: execution-client
 
   op-node:
-    image: us-docker.pkg.dev/oplabs-tools-artifacts/images/op-node:v1.10.1
+    image: us-docker.pkg.dev/oplabs-tools-artifacts/images/op-node:v1.11.0
     env_file:
       - .env
-      - .env.sepolia
+      # select your network here:
+#     - .env.sepolia
+      - .env.mainnet
     ports:
       - 9222:9222/udp
       - 9222:9222/tcp
